@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+
+    <!-- Police de caractères depuis Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lien vers votre fichier CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ÉCRAN D'ACCUEIL -->
+    <div id="homeScreen" class="container">
+        <h1><span class="snake-title">Snake</span> Game</h1>
+        <h2>Personnalisez votre partie</h2>
+
+        <details class="options-group" open>
+            <summary>1. Choisissez un thème</summary>
+            <div class="choices" id="themeChoices">
+                <!-- Thème 1 : Nuit -->
+                <div class="choice-item selected" 
+                     data-theme="night"
+                     data-bg-color="#2c3e50" 
+                     data-bg-image="url('https://www.transparenttextures.com/patterns/asfalt-light.png')"
+                     data-snake-color="green"
+                     data-food-color="#e74c3c"
+                     data-button-color="#2ecc71">
+                </div>
+
+                <!-- Thème 2 : Prairie -->
+                <div class="choice-item"
+                     data-theme="meadow"
+                     data-bg-color="#a8dba8" 
+                     data-bg-image="url('https://www.transparenttextures.com/patterns/grass-cubes.png')"
+                     data-snake-color="blue"
+                     data-food-color="#f1c40f"
+                     data-button-color="#3498db">
+                </div>
+                
+                <!-- Thème 3 : Désert -->
+                <div class="choice-item"
+                     data-theme="desert"
+                     data-bg-color="#f0e68c" 
+                     data-bg-image="url('https://www.transparenttextures.com/patterns/light-sand.png')"
+                     data-snake-color="orange"
+                     data-food-color="#1abc9c"
+                     data-button-color="#e67e22">
+                </div>
+
+                <!-- Thème 4 : Océan -->
+                <div class="choice-item"
+                     data-theme="ocean"
+                     data-bg-color="#4682B4" 
+                     data-bg-image="url('https://www.transparenttextures.com/patterns/clean-textile.png')"
+                     data-snake-color="purple"
+                     data-food-color="#ecf0f1"
+                     data-button-color="#9b59b6">
+                </div>
+            </div>
+        </details>
+        <button id="startGameButton" class="action-button">Commencer à Jouer</button>
+    </div>
+
+    <!-- CONTENEUR DU JEU -->
+    <div id="gameContainer" class="container hidden">
+        <div class="game-header">
+            <button id="backButton" title="Retour au menu">&larr;</button>
+            <h1><span class="snake-title">Snake</span> Game</h1>
+            <button id="pauseButton" title="Pause/Reprendre (P)">
+                <span class="pause-icon bar1"></span>
+                <span class="pause-icon bar2"></span>
+            </button>
+        </div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="score">Score : 0</div>
+        
+        <div id="gameOverScreen" class="hidden">
+             <h2>Game Over</h2>
+             <p>Score final : <span id="finalScore">0</span></p>
+             <button id="replayButton">Rejouer</button>
+             <button id="backToMenuButton">Menu Principal</button>
+        </div>
+    </div>
+
+    <!-- Lien vers votre fichier JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

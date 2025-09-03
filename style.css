@@ -1,0 +1,165 @@
+/* --- STYLES GÉNÉRAUX --- */
+:root {
+    --theme-color: #2ecc71; /* Vert par défaut */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- TYPOGRAPHIE --- */
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #333;
+    margin: 0;
+}
+
+.snake-title {
+    background: linear-gradient(135deg, #2ecc71, #229954);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    padding-right: 5px;
+}
+
+h2 {
+    font-weight: 400;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/* --- ÉCRAN D'ACCUEIL --- */
+.options-group {
+    margin: 15px 0;
+    text-align: left;
+    border-bottom: 2px solid #4CAF50;
+}
+
+.options-group summary {
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 15px 10px;
+    cursor: pointer;
+    list-style: none;
+}
+.options-group summary::-webkit-details-marker { display: none; }
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px;
+}
+
+.choice-item {
+    width: 60px;
+    height: 60px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.choice-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.choice-item.selected {
+    border-color: var(--theme-color);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.choice-item::before {
+    content: ''; position: absolute; top: 25px; left: 25px; width: 8px; height: 8px; border-radius: 3px;
+    background-color: var(--snake-preview-color);
+    box-shadow: -10px 0 0 var(--snake-preview-color), 10px 0 0 var(--snake-preview-color);
+}
+
+.choice-item::after {
+    content: ''; position: absolute; bottom: 8px; right: 8px; width: 10px; height: 10px; border-radius: 50%;
+    background-color: var(--food-preview-color);
+}
+
+[data-theme="night"] { background-color: #2c3e50; background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); --snake-preview-color: #2ecc71; --food-preview-color: #e74c3c; }
+[data-theme="meadow"] { background-color: #a8dba8; background-image: url('https://www.transparenttextures.com/patterns/grass-cubes.png'); --snake-preview-color: #3498db; --food-preview-color: #f1c40f; }
+[data-theme="desert"] { background-color: #f0e68c; background-image: url('https://www.transparenttextures.com/patterns/light-sand.png'); --snake-preview-color: #e67e22; --food-preview-color: #1abc9c; }
+[data-theme="ocean"] { background-color: #4682B4; background-image: url('https://www.transparenttextures.com/patterns/clean-textile.png'); --snake-preview-color: #9b59b6; --food-preview-color: #ecf0f1; }
+
+.action-button {
+    padding: 15px 30px; font-size: 1.1em; font-weight: 600; background-color: var(--theme-color); color: white;
+    border: none; border-radius: 10px; cursor: pointer; margin-top: 30px; transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0, 0.2);
+}
+
+.action-button:hover {
+    transform: translateY(-3px); box-shadow: 0 7px 20px rgba(0,0,0, 0.25);
+}
+
+/* --- ÉCRAN DE JEU --- */
+.game-header {
+    display: flex; justify-content: space-between; align-items: center; position: relative; margin-bottom: 10px;
+}
+.game-header h1 {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    /* LA LIGNE SUIVANTE CORRIGE LE PROBLÈME */
+    white-space: nowrap;
+}
+#backButton, #pauseButton {
+    position: static; transform: none; background: #eee; border: 1px solid #ccc; width: 35px; height: 35px;
+    border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; padding: 0;
+}
+#backButton { font-size: 1.5em; }
+
+.pause-icon {
+    display: block; background: #333; width: 4px; height: 14px; margin: 0 2px; border-radius: 2px; transition: all 0.3s ease;
+}
+#pauseButton.paused .bar1 { transform: rotate(45deg) translate(3px, -3px); height: 12px; }
+#pauseButton.paused .bar2 { transform: rotate(-45deg) translate(-3px, -3px); height: 12px; }
+
+#gameCanvas { border: 2px solid #333; }
+#score { font-size: 1.2em; font-weight: 600; margin-top: 10px; }
+
+/* --- ÉCRAN GAME OVER --- */
+#gameOverScreen { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); width: 80%; }
+#gameOverScreen h2 { color: #333; }
+#gameOverScreen button {
+    padding: 10px 20px; font-size: 0.9em; font-weight: 600; font-family: 'Poppins', sans-serif; border-radius: 8px;
+    cursor: pointer; margin: 0 5px; transition: all 0.3s ease;
+    background-color: transparent; border: 2px solid var(--theme-color); color: var(--theme-color);
+}
+#gameOverScreen button:hover {
+    background-color: var(--theme-color); color: white; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
