@@ -24,7 +24,6 @@ Voici quelques aperçus des différents thèmes et de l'interface du jeu :
 *   **Système de Thèmes :** Choisissez parmi 4 thèmes visuels uniques qui changent l'apparence du jeu.
 *   **Détection des Collisions :** Le jeu se termine si le serpent touche les bords ou son propre corps.
 *   **Sauvegarde du Meilleur Score :** Le meilleur score est enregistré dans le navigateur grâce à `localStorage`.
-*   **Effets Sonores :** Des sons se déclenchent lorsque le serpent mange ou lorsque la partie est perdue.
 *   **Fonction de Pause :** Mettez le jeu en pause à tout moment avec la touche 'P' ou le bouton dédié.
 *   **Design Responsive :** Le jeu s'adapte bien aux différentes tailles d'écran.
 
