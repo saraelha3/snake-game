@@ -1,15 +1,20 @@
 # 🐍 Snake Game with Custom Themes
 
-**🎮 Jouez à la Démo en Direct ! 🎮**
-[https://saraelha3.github.io/snake-game/](https://saraelha3.github.io/snake-game/)
+Ce projet est une recréation du jeu classique Snake, développé de A à Z pour démontrer une maîtrise solide du **JavaScript pur (vanilla JS)** et de la manipulation du **HTML5 Canvas**. L'accent a été mis sur une logique de jeu propre, une interface utilisateur personnalisable et une expérience utilisateur agréable.
 
 ---
 
-![Aperçu du Snake Game](lien-vers-votre-capture-d-ecran.png)
+### 📸 Aperçus du Jeu
 
-*(Astuce : Pour obtenir le lien de l'image, vous pouvez la glisser-déposer dans la section "Issues" de votre dépôt, copier le lien généré, puis fermer l'issue sans la créer).*
+Voici quelques aperçus des différents thèmes et de l'interface du jeu :
 
-Un projet front-end classique recréé de zéro pour démontrer une maîtrise solide du **JavaScript pur (vanilla JS)** et de la manipulation du **HTML5 Canvas**. Ce projet met l'accent sur une logique de jeu propre, une interface utilisateur personnalisable et une expérience utilisateur agréable.
+<img width="1366" height="692" alt="Capture d’écran 2025-09-04 151218" src="https://github.com/user-attachments/assets/4f1c438d-b589-41c6-ade3-dcd982f07eff" />
+<img width="1366" height="690" alt="Capture d’écran 2025-09-04 151334" src="https://github.com/user-attachments/assets/6b643336-d692-49ba-9b83-c4afc8ef7efc" />
+<img width="1366" height="691" alt="Capture d’écran 2025-09-04 151351" src="https://github.com/user-attachments/assets/9a4b41e2-b139-4fec-85d8-2083f2fd7555" />
+<img width="1365" height="690" alt="Capture d’écran 2025-09-04 151547" src="https://github.com/user-attachments/assets/c1069565-2b9e-425e-ae7e-ce817ac95b76" />
+<img width="1366" height="686" alt="Capture d’écran 2025-09-04 151604" src="https://github.com/user-attachments/assets/5604044c-6c96-439e-b72f-87171800d579" />
+<img width="1366" height="689" alt="Capture d’écran 2025-09-04 151727" src="https://github.com/user-attachments/assets/fc7c80d6-36a8-4f56-a013-ae321458fd5d" />
+<img width="1366" height="689" alt="Capture d’écran 2025-09-04 151828" src="https://github.com/user-attachments/assets/7747d9ce-8a2b-4704-833b-ad139ea2dce8" />
 
 ---
 
